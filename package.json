@@ -9,7 +9,7 @@
     "start": "nodemon app.js"
   },
   "keywords": [],
-  "author": "Godoy",
+  "author": "Caique ",
   "license": "ISC",
   "description": "API - Usuario",
   "dependencies": {
@@ -21,7 +21,9 @@
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.17.0",
     "mongoose": "^8.13.0",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "rimraf": "^5.0.5",
+    "glob": "^10.3.10"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
