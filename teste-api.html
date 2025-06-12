@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lan="pt-BR">
+    <head></head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, inicial-scale=1.0" />
+    <title> Teste API </title>
+    </head>
+    <body>
+        <h1>Teste de cinexão com a API</h1>
+        <button onclick="testarAPI()">Testar Conexão</button>
+        <div id="resultado"></div>
+
+        <script>
+            async function testarAPI(){
+                const resultado = document.getElementById("resultado");
+                resultado.innerHTML = "Testando conexão com Back-End...";
+
+                try{
+                    const response = await fetch(
+                        "https://uc11-api-main.onrender.com/api",
+                        {
+                            method: "GET",
+                            headers: {
+                                "Content-Type": "application/json",
+                                Accept: "*/*",
+                            },
+                        }
+                    );
+
+                    const data = await response.json();
+                    console.log("Resposta da API", data)
+
+                    resultado.innerHTML = `
+                                <h3>Resultado</h3>
+                                <p>${JSON.stringify(data)}</p>
+                                `;
+                } catch (error) {
+                console.error("Error", error)
+                resultado.innerHTML = `Erro: ${error.message}`
+                }
+            }
+        </script>
+    </body>
+</html>
